@@ -1,23 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import "./App.css";
+
+function Card() {
+  const [text, setText] = React.useState("Front Side");
+  
+  function handleClick() {
+    setText("Back Side")
+  }
+
+    return <div className="flashcard" onClick={handleClick}>{text}</div>;
+}
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>Flashcards</h1>
+      <h2>Click on a card to see the answer!</h2>
+      <Card />
+      <Card />
+      <Card />
+      <Card />
     </div>
   );
 }
